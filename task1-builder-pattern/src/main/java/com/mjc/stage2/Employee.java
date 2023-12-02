@@ -1,10 +1,10 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package com.mjc.stage2;
 
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-
-@EqualsAndHashCode
-@ToString
 public class Employee {
     private String name;
     private String lastName;
@@ -17,7 +17,7 @@ public class Employee {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -25,7 +25,7 @@ public class Employee {
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     public void setLastName(String lastName) {
@@ -33,7 +33,7 @@ public class Employee {
     }
 
     public String getPosition() {
-        return position;
+        return this.position;
     }
 
     public void setPosition(String position) {
@@ -41,7 +41,7 @@ public class Employee {
     }
 
     public String getPhone() {
-        return phone;
+        return this.phone;
     }
 
     public void setPhone(String phone) {
@@ -49,7 +49,7 @@ public class Employee {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -57,7 +57,7 @@ public class Employee {
     }
 
     public String getCarNumber() {
-        return carNumber;
+        return this.carNumber;
     }
 
     public void setCarNumber(String carNumber) {
@@ -68,45 +68,154 @@ public class Employee {
         return new EmployeeBuilder();
     }
 
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        } else if (!(o instanceof Employee)) {
+            return false;
+        } else {
+            Employee other = (Employee)o;
+            if (!other.canEqual(this)) {
+                return false;
+            } else {
+                Object this$name = this.getName();
+                Object other$name = other.getName();
+                if (this$name == null) {
+                    if (other$name != null) {
+                        return false;
+                    }
+                } else if (!this$name.equals(other$name)) {
+                    return false;
+                }
+
+                Object this$lastName = this.getLastName();
+                Object other$lastName = other.getLastName();
+                if (this$lastName == null) {
+                    if (other$lastName != null) {
+                        return false;
+                    }
+                } else if (!this$lastName.equals(other$lastName)) {
+                    return false;
+                }
+
+                Object this$position = this.getPosition();
+                Object other$position = other.getPosition();
+                if (this$position == null) {
+                    if (other$position != null) {
+                        return false;
+                    }
+                } else if (!this$position.equals(other$position)) {
+                    return false;
+                }
+
+                label62: {
+                    Object this$phone = this.getPhone();
+                    Object other$phone = other.getPhone();
+                    if (this$phone == null) {
+                        if (other$phone == null) {
+                            break label62;
+                        }
+                    } else if (this$phone.equals(other$phone)) {
+                        break label62;
+                    }
+
+                    return false;
+                }
+
+                label55: {
+                    Object this$email = this.getEmail();
+                    Object other$email = other.getEmail();
+                    if (this$email == null) {
+                        if (other$email == null) {
+                            break label55;
+                        }
+                    } else if (this$email.equals(other$email)) {
+                        break label55;
+                    }
+
+                    return false;
+                }
+
+                Object this$carNumber = this.getCarNumber();
+                Object other$carNumber = other.getCarNumber();
+                if (this$carNumber == null) {
+                    if (other$carNumber != null) {
+                        return false;
+                    }
+                } else if (!this$carNumber.equals(other$carNumber)) {
+                    return false;
+                }
+
+                return true;
+            }
+        }
+    }
+
+    protected boolean canEqual(Object other) {
+        return other instanceof Employee;
+    }
+
+    public int hashCode() {
+        boolean PRIME = true;
+        int result = 1;
+        Object $name = this.getName();
+        result = result * 59 + ($name == null ? 43 : $name.hashCode());
+        Object $lastName = this.getLastName();
+        result = result * 59 + ($lastName == null ? 43 : $lastName.hashCode());
+        Object $position = this.getPosition();
+        result = result * 59 + ($position == null ? 43 : $position.hashCode());
+        Object $phone = this.getPhone();
+        result = result * 59 + ($phone == null ? 43 : $phone.hashCode());
+        Object $email = this.getEmail();
+        result = result * 59 + ($email == null ? 43 : $email.hashCode());
+        Object $carNumber = this.getCarNumber();
+        result = result * 59 + ($carNumber == null ? 43 : $carNumber.hashCode());
+        return result;
+    }
+
+    public String toString() {
+        String var10000 = this.getName();
+        return "Employee(name=" + var10000 + ", lastName=" + this.getLastName() + ", position=" + this.getPosition() + ", phone=" + this.getPhone() + ", email=" + this.getEmail() + ", carNumber=" + this.getCarNumber() + ")";
+    }
+
     public static class EmployeeBuilder {
-        private final Employee employee;
+        private final Employee employee = new Employee();
 
         public EmployeeBuilder() {
-            employee = new Employee();
         }
 
         public EmployeeBuilder setName(String name) {
-            employee.setName(name);
+            this.employee.setName(name);
             return this;
         }
 
         public EmployeeBuilder setLastName(String lastName) {
-            employee.setLastName(lastName);
+            this.employee.setLastName(lastName);
             return this;
         }
 
         public EmployeeBuilder setPosition(String position) {
-            employee.setPosition(position);
+            this.employee.setPosition(position);
             return this;
         }
 
         public EmployeeBuilder setPhone(String phone) {
-            employee.setPhone(phone);
+            this.employee.setPhone(phone);
             return this;
         }
 
         public EmployeeBuilder setEmail(String email) {
-            employee.setEmail(email);
+            this.employee.setEmail(email);
             return this;
         }
 
         public EmployeeBuilder setCarNumber(String carNumber) {
-            employee.setCarNumber(carNumber);
+            this.employee.setCarNumber(carNumber);
             return this;
         }
 
         public Employee build() {
-            return employee;
+            return this.employee;
         }
     }
 }
